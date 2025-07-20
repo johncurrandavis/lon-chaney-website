@@ -1,15 +1,73 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Rye:wght@300;400;700;800&display=swap");
+
+:root {
+  --accent: #402;
+  --highlight: #d27;
+  --font: "Rye", serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
 
 h1, h2, h3, h4, h5, h6,
 .navbar-brand, .btn, .card-header {
-  font-family: "Rye";
+  font-family: var(--font);
 }
 
+.custom-border-bottom {
+  border-bottom: 1px solid var(--highlight);
+}
 
+.custom-border-top {
+  border-top: 1px solid var(--highlight);
+}
+
+#left_column,
+#right_column {
+  background-color: green;
+  padding: 1rem;
+}
+
+#right_column {
+  background-color: navy;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  #left_column {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16.6666%; /* 2 columns */
+    height: 100vh;
+    z-index: 1;
+  }
+
+  #right_column {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 16.6666%;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  #main_content {
+    margin-left: 16.6666%;
+    margin-right: 16.6666%;
+  }
+}
+
+/* Video styling */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
 }
@@ -23,11 +81,11 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .sepia-overlay {
-  background-color: rgba(112, 66, 20, 0.3); /* sepia tint */
-  pointer-events: none; /* allow interaction through it */
+  background-color: rgba(127, 63, 31, 0.4);
+  pointer-events: none;
   mix-blend-mode: multiply;
 }
-    
+
 .unmute-button {
   position: absolute;
   bottom: 10%;
